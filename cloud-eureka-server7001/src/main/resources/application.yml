@@ -3,6 +3,8 @@ server:
 eureka:
   instance:
     hostname: eureka7001.com #服务实例的名字
+    # 服务超过多少秒之后认为挂了
+    lease-expiration-duration-in-seconds: 3
   client:
     # false表示不向注册中心注册自己
     register-with-eureka: false
@@ -16,5 +18,9 @@ eureka:
       defaultZone: http://eureka7002.com:7002/eureka/
   server:
     # 关闭自我保护机制,保证不可用服务被及时剔除
-    enable-self-preservation: true
+    enable-self-preservation: false
+    # 清除无效服务实例的时间
     eviction-interval-timer-in-ms: 2000
+    # readOnly和readOrite二级缓存数据表同步时间
+    response-cache-update-interval-ms: 3000
+

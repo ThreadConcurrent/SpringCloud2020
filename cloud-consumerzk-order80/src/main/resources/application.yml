@@ -4,7 +4,8 @@ server:
 # 服务别名---注册zookeeper到注册中心的名称
 spring:
   application:
-    name: cloud-consumer-order-new
+     name: consumer-order-instance
+#    name: cloud-consumer-order-new
   cloud:
     zookeeper:
       connect-string: 192.168.121.150:2181

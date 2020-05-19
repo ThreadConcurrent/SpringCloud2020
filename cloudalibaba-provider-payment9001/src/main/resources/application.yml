@@ -1,11 +1,16 @@
 server:
-  port: 9001
+  port:
 spring:
   application:
-    name: nacos-payment-provider
+     name: nac9001os-payment-provider
+#    name: spring-cloud-alibaba-nacos-pay-provider
   cloud:
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848
 
-
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

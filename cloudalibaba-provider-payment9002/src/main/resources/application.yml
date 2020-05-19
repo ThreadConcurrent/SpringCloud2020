@@ -1,0 +1,17 @@
+server:
+  port: 9002
+spring:
+  application:
+    name: nacos-payment-provider
+#     name: spring-cloud-alibaba-nacos-pay-provider
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848 # 注意,这里走的是Linux的Nginx端口号,然后再转发到其他的cluster集群
+        # Linux IP:1111
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
